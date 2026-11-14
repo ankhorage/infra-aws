@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "kind": "infrastructure",
+  "title": "Ankhorage AWS Infrastructure",
+  "summary": "Records the repository boundary reserved for shared Amazon Web Services infrastructure.",
+  "purpose": "Keep ownership of future AWS infrastructure artifacts separate from provider adapters and application repositories.",
+  "domain": "cloud infrastructure",
+  "responsibilities": [
+    "Own the repository-level boundary for shared AWS infrastructure artifacts when they are introduced."
+  ],
+  "boundaries": [
+    "Does not currently contain deployable AWS configuration or automation.",
+    "Does not own provider-specific application adapters or application runtime behavior."
+  ],
+  "audience": [
+    "Infrastructure maintainers evaluating or introducing shared AWS resources."
+  ],
+  "architecture": {
+    "role": "Non-source infrastructure repository with no deployed implementation on the current default branch.",
+    "invariants": [
+      "Future shared infrastructure remains distinct from package-level provider adapter ownership."
+    ]
+  },
+  "constraints": {
+    "limitations": [
+      "The current default branch contains licensing and repository metadata only; it does not provision AWS resources."
+    ]
+  }
+}
